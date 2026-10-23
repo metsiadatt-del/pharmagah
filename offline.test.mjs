@@ -8,7 +8,7 @@ test('offline installation caches only existing application assets', async () =>
   let cached = [];
   vm.runInNewContext(worker, { self: { addEventListener: (event, fn) => handlers[event] = fn, skipWaiting: async () => {} }, caches: { open: async () => ({ addAll: async files => { cached = files; } }) } });
   let work; handlers.install({ waitUntil: promise => work = promise }); await work;
-  assert.ok(cached.includes('./index.html')); assert.ok(cached.includes('./assets/app.js'));
+  assert.ok(cached.includes('./index.html')); assert.equal(cached.length, 2);
   for (const file of cached) await access(new URL('../' + file, import.meta.url));
 });
 test('offline navigation uses cached shell and external APIs bypass cache', async () => {

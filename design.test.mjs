@@ -34,7 +34,7 @@ test('offline cache and app readiness use the same updated version', async () =>
   const worker = await readFile(new URL('../sw.js', import.meta.url), 'utf8');
   const app = await readFile(new URL('../src/app.js', import.meta.url), 'utf8');
   const version = worker.match(/const CACHE = '([^']+)'/)[1];
-  assert.equal(version, 'pharmagah-v2');
+  assert.equal(version, 'pharmagah-v3');
   assert.ok(app.includes(`caches.open('${version}')`));
 });
 test('generated styles match source and all local fonts are supplied', async () => {

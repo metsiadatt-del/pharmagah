@@ -168,6 +168,6 @@ window.addEventListener('offline', () => { collectNotes(); shell(); toast('آف�
 shell();
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('./sw.js').then(() => navigator.serviceWorker.ready).then(async registration => {
-    const cache = await caches.open('pharmagah-v2'); offlineReady = !!(await cache.match(new URL('./index.html', location.href).href));
+    const cache = await caches.open('pharmagah-v3'); offlineReady = !!(await cache.match(new URL('./index.html', location.href).href));
   }).catch(() => { offlineReady = false; });
 }
