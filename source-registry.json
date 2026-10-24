@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "policy": "Only connected sources may be cited; access status must be visible in every report.",
+  "connected": [
+    {"id":"europe-pmc","name":"Europe PMC","kind":"literature-index","status":"connected","supports":["search","abstract","PMID","DOI"],"limitations":["not full-text for every article","indexing is not quality endorsement"]}
+  ],
+  "requires_authorized_access": [
+    {"id":"pubmed-fulltext","name":"PubMed Central full text","kind":"literature","status":"partial","note":"Only records returned by the connected service are available."},
+    {"id":"uptodate","name":"UpToDate","kind":"clinical-reference","status":"not-connected","note":"Requires a licensed institutional connection; do not reproduce content without permission."},
+    {"id":"textbooks","name":"Harrison, Katzung, Foye, Applied Therapeutics","kind":"textbook","status":"not-connected","note":"Use only an authorized copy and record edition and page."},
+    {"id":"guidelines","name":"AHA and specialty guidelines","kind":"guideline","status":"not-connected","note":"Record issuing organization, version, publication date and URL before citation."},
+    {"id":"interactions","name":"Licensed interaction database","kind":"drug-interaction","status":"not-connected","note":"Do not infer X/D/C or a severity level from literature search alone."}
+  ],
+  "article_exclusion": ["preprint", "retracted publication", "retraction of publication", "missing identifier", "missing title"]
+}

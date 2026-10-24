@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Pharmagah evidence report",
+  "type": "object",
+  "required": ["id", "module", "question", "method", "evidence", "limitations", "created"],
+  "properties": {
+    "id": {"type":"string","pattern":"^[A-Za-z0-9-]{1,80}$"},
+    "module": {"enum":["pharma","case","disease","cosmetic","supplement","interaction"]},
+    "question": {"type":"string","minLength":2,"maxLength":300},
+    "method": {"type":"object","required":["query","sources","date"],"properties":{"query":{"type":"string"},"sources":{"type":"array","items":{"type":"string"}},"date":{"type":"string","format":"date-time"}}},
+    "evidence": {"type":"array","items":{"type":"object","required":["claim","support","certainty","citations"],"properties":{"claim":{"type":"string"},"support":{"enum":["direct","indirect","insufficient"]},"certainty":{"enum":["high","moderate","low","very-low","not-rated"]},"citations":{"type":"array","items":{"type":"string"}}}}},
+    "limitations": {"type":"array","items":{"type":"string"}},
+    "open_questions": {"type":"array","items":{"type":"string"}},
+    "created": {"type":"string","format":"date-time"}
+  }
+}

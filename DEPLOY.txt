@@ -20,6 +20,7 @@
 نسخهٔ پیشنهادی Node.js: نسخهٔ ۲۲ یا بالاتر (به‌علت نیاز یکی از وابستگی‌ها).
 فرمان‌ها به‌ترتیب:
   npm ci
+  npm run validate:research
   npm run check
   npm run build
   npm test
@@ -34,8 +35,9 @@ src/style.css: طراحی راست‌به‌چپ، رنگ‌ها، تایپوگ�
 assets/: فایل‌های آماده، فونت فارسی محلی و مجوز فونت
 sw.js: ذخیرهٔ پوستهٔ برنامه برای استفادهٔ آفلاین
 manifest.webmanifest: مشخصات وب‌اپ
-tests/: آزمون منطق، تعاملات DOM و رفتار آفلاین
-package-lock.json: نسخه‌های دقیق وابستگی‌ها
+research/: پروتکل تحقیق، رجیستری منابع، اسکیمای گزارش و استراتژی جست‌وجو
+scripts/validate-research.mjs: اعتبارسنجی فایل‌های تحقیق با npm run validate:research
+
 
 فونت و منابع
 فونت Vazirmatn به‌صورت محلی داخل assets قرار دارد و برای نمایش نیاز به CDN ندارد. مجوز آن در assets/FONT-LICENSE.txt همراه بسته است. نمادهای رابط SVG داخلی‌اند؛ تصویر یا فونت راه‌دور نیاز نیست.

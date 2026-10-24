@@ -1,0 +1,18 @@
+{
+  "query_engine": "Europe PMC REST search",
+  "default_result_type": "core",
+  "default_page_size": {"pharma":20,"case":20,"disease":20,"cosmetic":10,"supplement":10,"interaction":20},
+  "filters": {
+    "all": ["SRC:MED","HAS_ABSTRACT:Y","NOT PUB_TYPE:\"Preprint\"","NOT PUB_TYPE:\"Retracted Publication\"","NOT PUB_TYPE:\"Retraction of Publication\""],
+    "review": ["PUB_TYPE:\"Systematic Review\""],
+    "trial": ["PUB_TYPE:\"Randomized Controlled Trial\""],
+    "meta": ["PUB_TYPE:\"Meta-Analysis\""]
+  },
+  "query_construction": {
+    "single_term": "TITLE_ABS:\"<term>\" AND <filters>",
+    "interaction": "TITLE_ABS:\"<drug-a>\" AND TITLE_ABS:\"<drug-b>\" AND <filters>",
+    "sort": "sort_date:y"
+  },
+  "required_report_metadata": ["query","source","retrieved_at","pmid","doi","article_type"],
+  "never_claim": ["clinical diagnosis","individual dose","probability percentage","interaction severity not returned by a licensed database","coverage of all world literature"]
+}

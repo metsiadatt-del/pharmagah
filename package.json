@@ -6,7 +6,8 @@
   "scripts": {
     "build": "node build.mjs",
     "test": "node --test tests/*.test.mjs",
-    "check": "node --check src/app.js && node --check src/core.js"
+    "check": "node --check src/app.js && node --check src/core.js",
+    "validate:research": "node scripts/validate-research.mjs"
   },
   "dependencies": {
     "@fontsource/vazirmatn": "^5.2.7",
